@@ -1,1 +1,5 @@
 webdriver-manager
+selenium
+spacy
+pytest
+flask
