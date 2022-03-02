@@ -13,3 +13,7 @@ the next command downloads the language model (small size)
 ```sh 
 	python -m  spacy download en_core_web_sm
 ```
+
+In order to decouple the implementation to whatever library you wish to use for entity text analysis, the client class applies this [[SOLID]] principle #flashcard
+[[dependency inversion]]
+

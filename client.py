@@ -1,6 +1,6 @@
 class NamedEntityRecognitionClient:
-    def __init__(self):
-        pass 
+    def __init__(self, model):
+        self.model = model
 
-    def getEntities(self, text):
+    def getEntities(self, sentence):
         return {}
