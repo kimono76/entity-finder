@@ -10,7 +10,7 @@ class NamedEntityRecognitionClient_Test_Double:
         self.entities = entities
 
     def __call__(self, sentence):
-        return DocTestDouble(sent, self.entities)
+        return DocTestDouble(sentence, self.entities)
     
 class DocTestDouble:
     """
