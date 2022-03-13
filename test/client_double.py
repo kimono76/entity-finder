@@ -1,4 +1,4 @@
-class NamedEntityRecognitionClient_Test:
+class NamedEntityRecognitionClient_double:
     """
     test_doubles for spaCy NLP model
 

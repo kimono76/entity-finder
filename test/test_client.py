@@ -1,10 +1,10 @@
 import unittest as ut
 from client import NamedEntityRecognitionClient
-from spacy_client_test import NamedEntityRecognitionClient_Test
+from client_double import NamedEntityRecognitionClient_double
 
 class TestClient(ut.TestCase):
     def test_getEntities_emptyString_emptySpacyDocEntities(self):
-        model= NamedEntityRecognitionClient_Test('eng')
+        model= NamedEntityRecognitionClient_double('eng')
         model.returns_doc_ents([])
         client = NamedEntityRecognitionClient(model)
         entities = client.getEntities("")
