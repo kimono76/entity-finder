@@ -1,5 +1,5 @@
 import unittest as ut
-from client import NamedEntityRecognitionClient
+from spacy_client import NamedEntityRecognitionClient
 from client_double import NamedEntityRecognitionClient_double
 
 class TestClient(ut.TestCase):
