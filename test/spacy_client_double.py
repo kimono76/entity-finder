@@ -23,21 +23,21 @@ class NamedEntityRecognitionClient_double:
         self.entities = entities 
 
     def __call__(self, sentence):
-        return DocTest(sentence, self.entities)
+        return Doc_double(sentence, self.entities)
     
-class DocTest:
+class Doc_double:
     """
     class DocTestDouble Test double for spaCy Doc
     """
-    def __init__(self, sent, entities):
-        self.entities = [SpanTest(ent['text'], ent['label_']) for ent in entities]
+    def __init__(self, sentence, entities):
+        self.entities = [Span_double(entity['text'], entity['label_']) for entity in entities]
 
     def patch_methods(self, attr, return_value):
         def patched(): return return_value
         setattr(self, attr, patched)
         return self
 
-class SpanTest:
+class Span_double:
     """
     class SpanTestDouble for spacy span
     """
