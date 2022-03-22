@@ -20,6 +20,15 @@ class TestClient(ut.TestCase):
         entities = client.getEntities("Washinton DC is the capitol of USA")
         self.assertIsInstance(entities, dict)
 
+    def test_getEntities__string_spacy_PERSON__serializes_Person(self):
+        model= NamedEntityRecognitionClient_double('eng')
+        doc_entities = [{'text':'Steve Jobs','label_':'PERSON'}]
+        model.returns_doc_ents(doc_entities)
+        client = NamedEntityRecognitionClient(model)
+        result = client.getEntities(" some string ")
+        expectedResult = {entities:[{'entity':'Steve Jobs','label':'PERSON'}],'html':''}
+
+        self.assertListEqual(result['entities'],expectedResult['entities'])
 
     # def test_getEntities_string_list(self):
     #     client = NamedEntityRecognitionClient()
