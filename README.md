@@ -5,7 +5,10 @@
     [github docs for installing NeoVim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 2. Install Anaconda 
+   
     [anaconda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually) 
+
+    [docker image of anaconda](https://hub.docker.com/u/continuumio)
 
 3. Create a virtual environment 
 ```bash
