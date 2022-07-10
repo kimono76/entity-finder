@@ -3,4 +3,12 @@ class NamedEntityRecognitionClient:
         self.model = model
 
     def getEntities(self, sentence):
-        return {}
+        doc = self.model(sentence)
+        entities =[
+            {
+                'ent':ent.text,
+                'label':ent.label_
+            } for ent in doc.ents
+        ]
+        return {'ents': entities , 'html':''}
+        # return {'ents':[] , 'html':''}

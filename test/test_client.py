@@ -26,9 +26,9 @@ class TestClient(ut.TestCase):
         model.returns_doc_ents(doc_entities)
         client = NamedEntityRecognitionClient(model)
         result = client.getEntities(" some string ")
-        expectedResult = {'entities':[{'entity':'Steve Jobs','label':'PERSON'}],'html':''}
+        expectedResult = {'ents':[{'ent':'Steve Jobs','label':'PERSON'}],'html':''}
 
-        self.assertListEqual(result['entities'],expectedResult['entities'])
+        self.assertListEqual(result['ents'],expectedResult['ents'])
 
     # def test_getEntities_string_list(self):
     #     client = NamedEntityRecognitionClient()
