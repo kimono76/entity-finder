@@ -12,7 +12,7 @@
 
 3. Create a virtual environment 
 ```bash
-conda env create -f virtual-environment.yml --prefix ./env 
+conda env create -f virtual-environment.yml --prefix ./env
 ``` 
 
 1. Activate the virtual environment 
@@ -21,5 +21,14 @@ conda env create -f virtual-environment.yml --prefix ./env
 cd ~/source/repos/entity-finder 
 conda activate ./env 
 ``` 
+### For updating the current virtual environment
+Any package added in the _YAML_ file will be installed
+```bash
+conda env update --file virtual-environment.yml
+```
+### For deactivating the current virtual environment
+```bash
+conda deactivate
+```
 
 

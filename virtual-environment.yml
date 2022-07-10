@@ -1,3 +1,8 @@
 name: qimono-virtual
 dependencies:
   - python=3.7
+  - spacy
+  - pytest
+  - flask
+  - selenium
+  # - webdriver-manager
