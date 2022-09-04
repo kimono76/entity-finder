@@ -3,6 +3,8 @@ import selenium.webdriver as webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
 
+# source tutorial https://youtu.be/kpONBQ3muLg 
+
 firefox_user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:104.0) Gecko/20100101 Firefox/104.0'
 
 firefox_driver = os.path.join(
