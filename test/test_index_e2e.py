@@ -35,3 +35,7 @@ class EndToEndTests(unittest.TestCase):
     def test_appTitle__browser_startup__title_contains_appTitle(self):
         app_name = 'Ento'
         self.assertIn(app_name, self.driver.title)
+
+    #TODO pass executable path in a service object (use launch_browser.py as an example)
+    # run tests with this command
+    # python -m pytest
