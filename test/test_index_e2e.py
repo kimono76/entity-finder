@@ -1,6 +1,7 @@
 import os
 import unittest
 from selenium import webdriver
+#from selenium import webdriver
 
 class EndToEndTests(unittest.TestCase):    
     
@@ -36,6 +37,12 @@ class EndToEndTests(unittest.TestCase):
         app_name = 'Ento'
         self.assertIn(app_name, self.driver.title)
 
+    #def test_given_webpage_title__when_browser_tartup__then_title_contains_webpage_title(self):
+        
+
     #TODO pass executable path in a service object (use launch_browser.py as an example)
+    # make sura that selnium is installed, or run 
+    # pip install selenium
     # run tests with this command
     # python -m pytest
+    
