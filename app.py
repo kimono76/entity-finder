@@ -8,3 +8,9 @@ def index():
 
 if __name__ =='__main__':
     app.run(debug=True)
+    
+# make sure to run the virtual environment
+# conda activate qimono-virtual
+
+# run the server
+# python app.py 

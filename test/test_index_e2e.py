@@ -33,15 +33,24 @@ class EndToEndTests(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
         
-    def test_appTitle__browser_startup__title_contains_appTitle(self):
+    def getElementByCssSelector(self,val):
+        return self.driver.find_element(by='css selector', value=f'[data-test-end-to-end-id="{val}"]')
+        
+    def test_given_webpage_title__when_browser_startup__then_title_contains_webpage_title(self):
         app_name = 'Ento'
         self.assertIn(app_name, self.driver.title)
 
-    #def test_given_webpage_title__when_browser_tartup__then_title_contains_webpage_title(self):
+    def test__given_heading__when_browser_startup__then_heading_text_is_found(self):
+        app_heading_text = 'Entity Finder'
+        css_selector = 'app-heading'
+        element_text = self.getElementByCssSelector(css_selector).text
+        self.assertEqual(app_heading_text,element_text)
         
 
     #TODO pass executable path in a service object (use launch_browser.py as an example)
-    # make sura that selnium is installed, or run 
+    # make sure to run the virtual environment
+    # conda activate qimono-virtual
+    # make sure that selnium is installed, or run 
     # pip install selenium
     # run tests with this command
     # python -m pytest
