@@ -45,6 +45,11 @@ class EndToEndTests(unittest.TestCase):
         css_selector = 'app-heading'
         element_text = self.getElementByCssSelector(css_selector).text
         self.assertEqual(app_heading_text,element_text)
+    
+    def test__given_webpage__when_attemping_to_enter_text__then_input_found(self):
+        css_selector = 'input-text'
+        input_element = self.getElementByCssSelector(css_selector)
+        self.assertIsNotNone(input_element)
         
 
     #TODO pass executable path in a service object (use launch_browser.py as an example)
