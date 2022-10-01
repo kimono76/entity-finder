@@ -1,19 +1,19 @@
 let _url = 'http://localhost:5000/ner'
 
-let requestInit={
-    method: 'POST',
-    headers: new Headers(
-        { 
-            'content-type': 'application/json' 
-        }
-    ),
-    cache: 'no-cache',
-    body: JSON.stringify(
-        { 
-            'sentence': sent 
-        }
-    )
-}
+// let requestInit={
+//     method: 'POST',
+//     headers: new Headers(
+//         { 
+//             'content-type': 'application/json' 
+//         }
+//     ),
+//     cache: 'no-cache',
+//     body: JSON.stringify(
+//         { 
+//             'sentence': sent 
+//         }
+//     )
+// }
 
 const fetchResult = sentence => {
   fetch(_url, {
