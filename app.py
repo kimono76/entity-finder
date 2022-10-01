@@ -1,10 +1,12 @@
-from crypt import methods
-import json
-from urllib import response
 from flask import Flask, render_template, request
 import json
+import spacy 
+from spacy_client import NamedEntityRecognitionClient
 
 app = Flask(__name__)
+
+ner = spacy.load("en_core_web_sm")
+ner = NamedEntityRecognitionClient(ner)
 
 @app.route('/')
 def index():
@@ -13,7 +15,12 @@ def index():
 @app.route('/ner',methods=['POST'])
 def request_named_entities():
     data = request.get_json()
-    response = True 
+    result = ner.getEntities(data['sentence'])
+    print(result)
+    response = {
+        "entities":result.get('ents'),
+        "html":result.get('html')
+        } 
     return json.dumps(response)
 
 if __name__ =='__main__':
