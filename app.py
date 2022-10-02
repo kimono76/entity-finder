@@ -2,8 +2,11 @@ from flask import Flask, render_template, request
 import json
 import spacy 
 from spacy_client import NamedEntityRecognitionClient
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+CORS(app)
 
 ner = spacy.load("en_core_web_sm")
 ner = NamedEntityRecognitionClient(ner)
@@ -31,3 +34,6 @@ if __name__ =='__main__':
 
 # run the server
 # python app.py 
+
+# to allow cross origin resource sharing you must install flask-from 
+# pip install -U flask-cors
