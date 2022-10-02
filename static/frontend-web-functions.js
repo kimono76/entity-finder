@@ -16,6 +16,7 @@ let _url = 'http://localhost:5000/ner'
 // }
 
 const fetchResult = sentence => {
+  print('fetch to spacy')
   fetch(_url, {
       method: 'POST',
       headers: new Headers(
@@ -32,6 +33,8 @@ const fetchResult = sentence => {
     })
     .then(async response => {
       if (response.ok) {
+        print('POST to spacy')
+        print(response)
         let result = await response.json();
         let labeledDoc = document.getElementById('labeled-doc')
         labeledDoc.innerHTML = result.html;
