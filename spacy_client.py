@@ -4,6 +4,11 @@ class NamedEntityRecognitionClient:
 
     def getEntities(self, sentence):
         doc = self.model(sentence)
+        
+        for entity in doc.ents:
+            print('label from SPACY ')
+            print(entity.label_)
+        
         entities =[
             {
                 'ent':ent.text,
@@ -19,6 +24,7 @@ class NamedEntityRecognitionClient:
             'NORP':'Group',
             'LOC':'Location',
             'GPE':'Location',
-            'LANGUAGE':'Language'
+            'LANGUAGE':'Language',
+            'ORDINAL':'Order'
         }
         return label_map.get(label)

@@ -36,6 +36,8 @@ const fetchResult = sentence => {
         console.log('POST to spacy')
         console.log(response)
         let result = await response.json();
+        console.log('response to Json')
+        console.log(result)
         let labeledDoc = document.getElementById('labeled-doc')
         labeledDoc.innerHTML = result.html;
         return loadResultsIntoTable(result.entities);

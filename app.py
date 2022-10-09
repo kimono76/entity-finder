@@ -18,6 +18,8 @@ def index():
 @app.route('/ner',methods=['POST'])
 def request_named_entities():
     data = request.get_json()
+    print('data = ')
+    print(data)
     result = ner.getEntities(data['sentence'])
     print(result)
     response = {
