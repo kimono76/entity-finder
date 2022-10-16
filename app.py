@@ -30,6 +30,14 @@ def request_named_entities():
         }
     return json.dumps(response)
 
+
+@app.route('/sample', methods=['GET'])
+def request_sample_entities():
+    result = ner.getEntities('George Washington was the first president of USA')
+    print(result)
+    #response = {"entities": result.get('ents'), "html": result.get('html')}
+    return result #json.dumps(response)
+
 if __name__ =='__main__':
     app.run(
         #host='127.0.01',
