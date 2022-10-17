@@ -4,8 +4,14 @@ import spacy
 from spacy_client import NamedEntityRecognitionClient
 from public_ip_handler import public_ip
 from flask_cors import CORS
+from flask_pymongo import PyMongo
 
 app = Flask(__name__)
+
+app.config['MONGO_URI'] = 'mongodb+srv://qimono:Secret-Ento-76@cluster0.jlga6l0.mongodb.net/DbEntities?retryWrites=true&w=majority'
+
+mongodb_client = PyMongo(app)
+db = mongodb_client.db
 
 CORS(app)
 
@@ -56,3 +62,8 @@ if __name__ =='__main__':
 
 # to allow cross origin resource sharing you must install flask-from
 # pip install -U flask-cors
+
+# to support MongoDb in flask
+# pip install Flask-PyMongo
+# dnspython is needed
+# python -m pip install "pymongo[srv]"
