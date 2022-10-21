@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Blueprint
 import json
 import spacy
 from spacy_client import NamedEntityRecognitionClient
@@ -8,10 +8,18 @@ from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 
-app.config['MONGO_URI'] = 'mongodb+srv://qimono:Secret-Ento-76@cluster0.jlga6l0.mongodb.net/DbEntities?retryWrites=true&w=majority'
+main = Blueprint('main',__name__)
+app.register_blueprint(main)
+
+app.config['MONGO_URI'] = 'mongodb+srv://qimono:Secret-Ento-76@cluster0.jlga6l0.mongodb.net/DbEnto?retryWrites=true&w=majority'
+
+# Collection name = NamedEntities
 
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
+
+named_entities_collection = db.NamedEntities
+
 
 CORS(app)
 
@@ -41,6 +49,14 @@ def request_named_entities():
 def request_sample_entities():
     result = ner.getEntities('George Washington was the first president of USA')
     print(result)
+    
+    # named_entities_collection.insert_one({
+    #     'ent':'George Washington',
+    #     'label':'person',
+    #     'correction-label':'',
+    #     'cetified':True,
+    # })
+    
     #response = {"entities": result.get('ents'), "html": result.get('html')}
     return result #json.dumps(response)
 
@@ -67,3 +83,4 @@ if __name__ =='__main__':
 # pip install Flask-PyMongo
 # dnspython is needed
 # python -m pip install "pymongo[srv]"
+# pip install pythondns
