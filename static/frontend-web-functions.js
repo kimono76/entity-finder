@@ -1,4 +1,4 @@
-let _url = 'http://localhost:5000/ner'
+let _url = 'http://localhost:3000/ner'
 
 // let requestInit={
 //     method: 'POST',

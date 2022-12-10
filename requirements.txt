@@ -3,3 +3,5 @@ selenium
 spacy
 pytest
 flask
+Flask-Cors
+Flask-PyMongo

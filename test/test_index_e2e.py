@@ -20,7 +20,7 @@ class EndToEndTests(unittest.TestCase):
         )
         #SELENIUM_DRIVER_LOCATION = r'/Application/geckodriver'
         
-        FLASK_LOCAL_PORT = 'http://localhost:5000'
+        FLASK_LOCAL_PORT = 'http://localhost:3000'
         FLASK_STAGING_PORT = 'https://'
         FLASK_PRODUCTION_PORT = 'https://'
         
